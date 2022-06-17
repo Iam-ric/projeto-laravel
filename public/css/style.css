@@ -1,25 +1,25 @@
-h1{
+h1 {
     font-family: 'Roboto';
 }
 
-.nav-item{
-    float: left;
-  }
+.nav-item {
+    display: inline;
+}
 
-.nav-img{
+.nav-img {
     width: 50px;
-  }
+}
 
-  .navbar-nav {
+.navbar-nav {
     list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  }
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
 
-  .nav-link{
+.nav-link {
     display: block;
     padding: 8px;
-    background-color: #dddddd;
-  }
-
+    margin-left: 10px;
+   
+}
