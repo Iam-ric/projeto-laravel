@@ -3,5 +3,9 @@
 @section('title', 'welcome')
 
 @section('content')
-    <h1>teste</h1>
+
+@foreach($books as $book)
+ <p>{{ $book->name }} -- {{$book->price}}</p>
+@endforeach
+   
 @endsection
