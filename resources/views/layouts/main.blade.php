@@ -30,10 +30,10 @@
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="/" class="nav-link">Eventos</a>
+            <a href="/" class="nav-link">Livros</a>
           </li>
           <li class="nav-item">
-            <a href="/events/create" class="nav-link">Criar Eventos</a>
+            <a href="/events/create" class="nav-link">Cadastrar Livro</a>
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link">Entrar</a>
@@ -45,8 +45,19 @@
       </div>
     </nav>
   </header>
+  <main>
+    <div class="container-fluid">
+      <div class="row">
+        @if(session('msg'))
+        <p class="msg">{{ session('msg') }}</p>
+        @endif
+        @yield('content')
+      </div>
+    </div>
 
-  @yield('content')
+
+  </main>
+  
   <footer>
     <p>Iam Henrique &copy; 2022</p>
   </footer>

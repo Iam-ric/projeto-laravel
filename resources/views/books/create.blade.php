@@ -5,11 +5,12 @@
 @section('content')
 
 <div id="book-create-container" class="col-md-6 offset-md-3">
-    <h1>Adicicione um Livro</h1>
+    <h1>Adicione um Livro</h1>
     <form action="/books" method="POST">
+      @csrf
       <div class="form-group">
-        <label for="title">Books:</label>
-         <input type="text" class="form-control" id="title" name="title" placeholder="Tipo d Livro">
+        <label for="title">Literary genre:</label>
+         <input type="text" class="form-control" id="title" name="title" placeholder="Gênero do Livro">
       </div>
       <div class="form-group">
         <label for="title">Name:</label>
@@ -25,8 +26,14 @@
       </div>
       <div class="form-group">
         <label for="title">Status:</label>
-         <input type="text" class="form-control" id="status" name="status" placeholder="Disponivel">
+         <select name="status" id="status" class="form-control">
+            <option value="0">Indisponivel</option>
+            <option value="1">Disponivel</option>
+         </select>
       </div>
+
+      <input type="submit" class="btn btn-primary" value="Adicionar">
+   
     </form>
 </div>
 

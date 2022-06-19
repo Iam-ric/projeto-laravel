@@ -17,4 +17,4 @@ use App\Http\Controllers\BookController;
 
 Route::get('/', [BookController::class,'index']); 
 Route::get('/events/create', [BookController::class,'create']);
-
+Route::post('/books', [BookController::class, 'store']);

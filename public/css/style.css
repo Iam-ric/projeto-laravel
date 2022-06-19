@@ -16,6 +16,16 @@ header{
     margin: 0;
 }
 
+.msg {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
+
 .container-fluid{
     padding: 0;
 }
@@ -72,7 +82,7 @@ header{
 /* search Container */
 
 #search-container {
-    background-image: url("../img/fundo1.jpg");
+    background-image: url("../img/fundo4.jpg");
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -142,6 +152,24 @@ header{
     font-size: 14px;
     color:#757575;
 }
+
+/* Book create page */
+
+#book-create-container {
+    padding: 30px;
+}
+
+#book-create-container label {
+    font-weight: bold;
+}
+
+#book-create-container input,
+#book-create-container select {
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+
 
 /* footer */
 
