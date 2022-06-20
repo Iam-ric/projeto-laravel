@@ -19,3 +19,13 @@ Route::get('/', [BookController::class,'index']);
 Route::get('/books/create', [BookController::class,'create']);
 Route::get('/books/{id}', [BookController::class,'show']);
 Route::post('/books', [BookController::class, 'store']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
