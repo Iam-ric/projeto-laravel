@@ -15,7 +15,7 @@ class BookController extends Controller
       if($search) {
 
          $books = Book::where([
-            ['title', 'like', '%'.$search.'%']
+            ['name', 'like', '%'.$search.'%']
          ])->get();
          
       }else {
