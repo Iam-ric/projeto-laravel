@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 
 Route::get('/', [BookController::class,'index']); 
-Route::get('/events/create', [BookController::class,'create']);
+Route::get('/books/create', [BookController::class,'create']);
+Route::get('/books/{id}', [BookController::class,'show']);
 Route::post('/books', [BookController::class, 'store']);

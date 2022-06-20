@@ -33,7 +33,7 @@
             <a href="/" class="nav-link">Livros</a>
           </li>
           <li class="nav-item">
-            <a href="/events/create" class="nav-link">Cadastrar Livro</a>
+            <a href="/books/create" class="nav-link">Cadastrar Livro</a>
           </li>
           <li class="nav-item">
             <a href="/" class="nav-link">Entrar</a>

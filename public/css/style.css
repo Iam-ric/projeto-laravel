@@ -122,11 +122,11 @@ header{
 }
 
 #books-container .card{
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 15%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5%;
 }
 
 #books-container img{
@@ -167,6 +167,43 @@ header{
 #book-create-container select {
     font-size: 12px;
     margin-bottom: 7px;
+}
+
+/* Book page */
+#image-container,
+#info-container{
+    margin-top: 30px;
+}
+
+#info-container img {
+     border-radius: 10px;
+}
+
+#info-container h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p {
+    margin: 0;
+    font-size: 14px;
+    display: flex;
+}
+
+#info-container h3,
+#description-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#info-container ion-icon {
+    font-size: 20px;
+    color: #f2a340;
+    margin-right: 5px;
+}
+
+#info-container #book-submit{
+    margin: 20px 0;
 }
 
 

@@ -6,11 +6,19 @@
 
 <div id="book-create-container" class="col-md-6 offset-md-3">
     <h1>Adicione um Livro</h1>
-    <form action="/books" method="POST">
+    <form action="/books" method="POST" enctype="multipart/form-data">
       @csrf
+      <div class="form-group">
+        <label for="image">Imagens dos livros:</label>
+         <input type="file" id="image" name="image" class="from-control-file">
+      </div>
       <div class="form-group">
         <label for="title">Literary genre:</label>
          <input type="text" class="form-control" id="title" name="title" placeholder="Gênero do Livro">
+      </div>
+      <div class="form-group">
+        <label for="date">data da publicação:</label>
+         <input type="date" class="form-control" id="date" name="date">
       </div>
       <div class="form-group">
         <label for="title">Name:</label>
