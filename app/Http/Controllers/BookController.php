@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Book;
+use App\Models\User;
 
 class BookController extends Controller
 {
@@ -53,6 +54,9 @@ class BookController extends Controller
          $book->image = $imageName;
       }
 
+      $user = auth()->user();
+      $book->user_id = $user->id;
+
       $book->save();
 
       return redirect('/')->with('msg', 'Livro cadastrado com sucesso');
@@ -62,6 +66,24 @@ class BookController extends Controller
       
       $book = Book::findOrFail($id);
 
-      return view('books.show', ['book' => $book]);
+      $bookOwner = User::where('id', $book->user_id)->first()->toArray();
+
+      return view('books.show', ['book' => $book, 'bookOwner' => $bookOwner]);
+   }
+
+   public function dashboard() {
+      
+      $user = auth()->user();
+
+      $books = $user->books;
+
+      return view('books.dashboard', ['books' => $books]);
+
+   }
+
+   public function destroy($id) {
+      Book::findOrFail($id)->delete();
+
+      return redirect('/dashboard')->with('msg', 'Livro excluido com sucesso!');
    }
 }

@@ -16,16 +16,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 
 Route::get('/', [BookController::class,'index']); 
-Route::get('/books/create', [BookController::class,'create']);
+Route::get('/books/create', [BookController::class,'create'])->middleware('auth');
 Route::get('/books/{id}', [BookController::class,'show']);
 Route::post('/books', [BookController::class, 'store']);
+Route:: delete('/books/{id}', [BookController::class, 'destroy']);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/dashboard', [BookController::class, 'dashboard'])->middleware('auth');
+
+

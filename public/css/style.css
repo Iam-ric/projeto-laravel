@@ -206,6 +206,21 @@ header{
     margin: 20px 0;
 }
 
+/* Dashboard */
+
+.dashboard-title-container {
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.dashboard-books-container th {
+    width: 25%;
+}
+
+.dashboard-books-container form {
+    display: inline-block;
+}
+
 
 
 /* footer */
