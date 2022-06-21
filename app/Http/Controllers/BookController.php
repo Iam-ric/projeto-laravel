@@ -107,7 +107,9 @@ class BookController extends Controller
    public function edit($id)
    {
 
-      $book = Book::findOrFail($id);
-      return view('books.edit', ['book' => $book]);
+      if(!$book = Book::find($id))
+          return redirect()->routes('books.index');
+      return view('books.edit', compact('book'));
+
    }
 }

@@ -9,7 +9,7 @@
 </div>
 <div class="col-md10 offset-md-1 dashboard-books-container">
     @if(count($books) > 0)
-    <!-- INICIO -->
+
     <div class="col-md-12">
         <h1>Buscar </h1>
         <form action="/dashboard" method="GET">
@@ -26,14 +26,12 @@
     </div>
     <div id="books-container" class="col-md-12">
 
-
-        <!-- FIM -->
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Idade</th>
+                    <th scope="col">Data de Nascimento</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -43,7 +41,7 @@
                 <tr>
                     <td scropt="row">{{ $loop->index +1 }}</td>
                     <td><a href="/books/{{ $book->id }}">{{ $book->name }}</a></td>
-                    <td></td>
+                    <td><a href="/books/{{ $book->id }}">{{ $book->date->format('d/m/Y') }}</a></td>
 
                     <td>
                         <a href="/books/edit/{{ $book->id}}" class="btn btn-info edit-btn">

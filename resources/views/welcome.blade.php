@@ -1,12 +1,12 @@
 
 @extends('layouts.main')
 
-@section('title', 'welcome')
+@section('title', 'Página Inicial - Home')
 
 @section('content')
 
 <div id="search-container" class="col-md-12">
-   <h1>Buscar Livros</h1> 
+   <h1>Buscar por clientes</h1> 
    <form action="/" method="GET">
     <input type="text" id="search" name="search" class="form-control" placeholder="Procurar ....">
    </form>
@@ -16,8 +16,8 @@
 @if($search)
     <h2>Buscando por: {{ $search}}</h2>
     @else
-    <h2>Outros Livros</h2>
-    <p class="subtitle">Encontrar mais livros</p>
+    <h2>Lista de clientes</h2>
+    <p class="subtitle">Encontrar Clientes</p>
     @endif
 
     
@@ -27,8 +27,7 @@
             <img src="/img/books/{{ $book->image}}" alt="{{$book -> title}}">
            <div class="card-body">
                <p class="card-date">{{ date('d/m/Y', strtotime($book->date)) }}</p>
-                <h5 class="card-name">{{$book->name}}></h5>
-                <p class="card-status">status:{{$book->status}}</p>
+                <h5 class="card-name">{{$book->name}}</h5>
                 <a href="/books/{{ $book->id }}" class="btn btn-primary">Saiba mais</a>
             </div>
         </div>
