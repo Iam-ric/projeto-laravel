@@ -1,43 +1,32 @@
 @extends('layouts.main')
 
-@section('title', 'Criar Eventos')
+@section('title', 'Criar Cadastro')
 
 @section('content')
 
 <div id="book-create-container" class="col-md-6 offset-md-3">
-    <h1>Adicione um Livro</h1>
+    <h1>Adicione um Cliente</h1>
     <form action="/books" method="POST" enctype="multipart/form-data">
       @csrf
       <div class="form-group">
-        <label for="image">Imagens dos livros:</label>
+        <label for="image">Imagem:</label>
          <input type="file" id="image" name="image" class="from-control-file">
       </div>
       <div class="form-group">
-        <label for="title">Literary genre:</label>
-         <input type="text" class="form-control" id="title" name="title" placeholder="Gênero do Livro">
+        <label for="title">Nome</label>
+         <input type="text" class="form-control" id="name" name="name" placeholder="Nome Completo">
       </div>
       <div class="form-group">
-        <label for="date">data da publicação:</label>
+        <label for="title">Email</label>
+         <input type="text" class="form-control" id="email" name="email" placeholder="Email válido">
+      </div>
+      <div class="form-group">
+        <label for="title">Telefone:</label>
+         <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Sem DDD">
+      </div>
+      <div class="form-group">
+        <label for="date">Data de Nascimento:</label>
          <input type="date" class="form-control" id="date" name="date">
-      </div>
-      <div class="form-group">
-        <label for="title">Name:</label>
-         <input type="text" class="form-control" id="name" name="name" placeholder="Nome do Livro">
-      </div>
-      <div class="form-group">
-        <label for="title">Author:</label>
-         <input type="text" class="form-control" id="author" name="author" placeholder="Nome do Autor">
-      </div>
-      <div class="form-group">
-        <label for="title">Price:</label>
-         <input type="text" class="form-control" id="price" name="price" placeholder="Valor do Livro">
-      </div>
-      <div class="form-group">
-        <label for="title">Status:</label>
-         <select name="status" id="status" class="form-control">
-            <option value="0">Indisponivel</option>
-            <option value="1">Disponivel</option>
-         </select>
       </div>
 
       <input type="submit" class="btn btn-primary" value="Adicionar">

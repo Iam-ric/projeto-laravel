@@ -30,29 +30,21 @@
         </a>
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a href="/" class="nav-link">Livros</a>
+            <a href="/" class="nav-link">Pagina Inicial</a>
           </li>
           <li class="nav-item">
-            <a href="/books/create" class="nav-link">Cadastrar livro</a>
+            <a href="/books/create" class="nav-link">Cadastrar Cliente</a>
           </li>
-          <li class="nav-item">
-            <a href="/profile/create" class="nav-link">Cadastrar Cliente</a>
-          </li>
-          
           @auth
 
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">Usuarios Cadastrados</a>
-          </li>
-
-          <li class="nav-item">
-            <a href="/dashboard" class="nav-link">Livro cadastrado</a>
+            <a href="/dashboard" class="nav-link">Meus Clientes</a>
           </li>
 
           <li class="nav-item">
             <form action="/logout" method="POST">
               @csrf 
-              <a href="/logout" class="nav-link"
+              <a href="" class="nav-link"
               onclick="user.preventDefault();
                  this.closest('form').submit();">Sair</a>
             </form>
@@ -64,9 +56,6 @@
           </li>
           <li class="nav-item">
             <a href="/register" class="nav-link">Cadastrar</a>
-          </li>
-          <li class="nav-item">
-            <a href="/profile" class="nav-link">Cadastrar Cliente</a>
           </li>
           @endguest
         </ul>

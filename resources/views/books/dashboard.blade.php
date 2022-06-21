@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="col-md-10 offset-md-1 dashboard-title-container">
-    <h1>Meus Livros</h1>
+    <h1>Meus Clientes</h1>
 </div>
 <div class="col-md10 offset-md-1 dashboard-books-container">
     @if(count($books) > 0)
@@ -13,10 +13,10 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome do Livro</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Ação</th>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Ações</th>
             </tr>
         </thead>
     
@@ -43,7 +43,7 @@
  </table>
 
     @else
-    <p> Você não tem nada do carrinho ainda, <a href="/books/create"> Adicionar Livros</a></p>
+    <p> Cliente inexistente <a href="/books/create"> Adicionar Cliente</a></p>
     @endif
 </div>
 

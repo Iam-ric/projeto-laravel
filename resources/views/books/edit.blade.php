@@ -1,22 +1,22 @@
 @extends('layouts.main')
 
-@section('title', 'Editando:' .$book->title)
+@section('title', 'Editando:' .$book->name)
 
 @section('content')
 
 <div id="book-create-container" class="col-md-6 offset-md-3">
-    <h1>Editando: {{ $book ->title}}</h1>
+    <h1>Editando: {{ $book ->name}}</h1>
     <form action="/books/update/{{ $book->id}}" method="POST" enctype="multipart/form-data">
       @csrf
       @method('PUT')
       <div class="form-group">
-        <label for="image">Imagens dos livros:</label>
+        <label for="image">Imagem:</label>
          <input type="file" id="image" name="image" class="from-control-file">
          <img src="/img/books/{{ $book->image}}" alt="{{ $book->name}}" class="img-preview">
       </div>
       <div class="form-group">
         <label for="title">Literary genre:</label>
-         <input type="text" class="form-control" id="title" name="title" placeholder="Gênero do Livro" value="{{ $book->title}}">
+         <input type="text" class="form-control" id="title" name="title" placeholder="Gênero do Livro" value="{{ $book->name}}">
       </div>
       <div class="form-group">
         <label for="date">data da publicação:</label>
