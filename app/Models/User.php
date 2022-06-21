@@ -62,4 +62,9 @@ class User extends Authenticatable
     public function books(){
         return $this->hasMany('App\Models\Book');
     }
+
+    public function pessoas(){
+        return $this->hasMany('App\Models\Pessoa');
+    }
+
 }

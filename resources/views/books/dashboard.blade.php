@@ -25,10 +25,10 @@
         <tr>
             <td scropt="row">{{ $loop->index +1 }}</td>
             <td><a href="/books/{{ $book->id }}">{{ $book->name }}</a></td>
-            <td>0</td>
+            <td></td>
             
             <td>
-                <a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
+                <a href="/books/edit/{{ $book->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Editar</a>
                 <form action="/books/{{ $book->id }}" method="POST">
                     @csrf
                     @method('DELETE')

@@ -33,38 +33,42 @@
             <a href="/" class="nav-link">Livros</a>
           </li>
           <li class="nav-item">
-            <a href="/books/create" class="nav-link">Cadastrar Livro</a>
+            <a href="/books/create" class="nav-link">Cadastrar livro</a>
           </li>
-         
-          @auth
-           
           <li class="nav-item">
-            <a href="/dashboard" class="nav-link">Livro cadastrados</a>
+            <a href="/profile/create" class="nav-link">Cadastrar Cliente</a>
+          </li>
+          
+          @auth
+
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">Usuarios Cadastrados</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">Livro cadastrado</a>
           </li>
 
           <li class="nav-item">
             <form action="/logout" method="POST">
-              @csrf
+              @csrf 
               <a href="/logout" class="nav-link"
-               onclick="book.preventDefault();
-                      this.closest('form').submit();">Sair</a>
-
+              onclick="user.preventDefault();
+                 this.closest('form').submit();">Sair</a>
             </form>
           </li>
-
           @endauth
-
           @guest
-         
           <li class="nav-item">
             <a href="/login" class="nav-link">Entrar</a>
           </li>
           <li class="nav-item">
             <a href="/register" class="nav-link">Cadastrar</a>
           </li>
-
+          <li class="nav-item">
+            <a href="/profile" class="nav-link">Cadastrar Cliente</a>
+          </li>
           @endguest
-
         </ul>
       </div>
     </nav>
@@ -78,8 +82,6 @@
         @yield('content')
       </div>
     </div>
-
-
   </main>
   
   <footer>
