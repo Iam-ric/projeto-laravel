@@ -44,7 +44,7 @@
                     <td><a href="/books/{{ $book->id }}">{{ $book->date->format('d/m/Y') }}</a></td>
 
                     <td>
-                        <a href="/books/edit/{{ $book->id}}" class="btn btn-info edit-btn">
+                        <a href="/books/edita/{{ $book->id}}" class="btn btn-info edit-btn">
                             <ion-icon name="create-outline"></ion-icon>Editar
                         </a>
 

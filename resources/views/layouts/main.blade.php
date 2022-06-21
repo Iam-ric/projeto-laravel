@@ -42,11 +42,10 @@
           </li>
 
           <li class="nav-item">
-            <form action="/logout" method="POST">
+            
+            <form id="logout-form" action="{{ route('logout') }}" method="POST">
               @csrf 
-              <a href="" class="nav-link"
-              onclick="user.preventDefault();
-                 this.closest('form').submit();">Sair</a>
+                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
             </form>
           </li>
           @endauth

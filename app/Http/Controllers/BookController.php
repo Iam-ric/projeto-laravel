@@ -104,12 +104,9 @@ class BookController extends Controller
       return redirect('/dashboard')->with('msg', 'Cliente excluido com sucesso!');
    }
 
-   public function edit($id)
-   {
+   public function edita($id){
+      $book = Book::findOrFail($id);
 
-      if(!$book = Book::find($id))
-          return redirect()->routes('books.index');
-      return view('books.edit', compact('book'));
-
+      return view('books.edita', ['book' => $book]);
    }
 }
