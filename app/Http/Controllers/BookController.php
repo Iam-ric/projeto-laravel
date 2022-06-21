@@ -10,29 +10,31 @@ use App\Models\User;
 
 class BookController extends Controller
 {
-   public function index(){
+   public function index()
+   {
 
       $search = request('search');
- 
-      if($search) {
+
+      if ($search) {
 
          $books = Book::where([
-            ['name', 'like', '%'.$search.'%']
+            ['name', 'like', '%' . $search . '%']
          ])->get();
-         
-      }else {
+      } else {
          $books = Book::all();
       }
-     
-    return view('welcome', ['books' => $books, 'search' => $search]);
+
+      return view('welcome', ['books' => $books, 'search' => $search]);
    }
 
-   public function create (){
-    return view('books.create');
+   public function create()
+   {
+      return view('books.create');
    }
 
-   public function store(Request $request) {
-      
+   public function store(Request $request)
+   {
+
       $book = new Book;
 
       $book->name = $request->name;
@@ -41,14 +43,14 @@ class BookController extends Controller
       $book->date = $request->date;
 
       //image upload
-      if($request->hasfile('image') && $request->file('image')->isValid()) {
-          
+      if ($request->hasfile('image') && $request->file('image')->isValid()) {
+
          $requestImage = $request->image;
 
          $extension = $requestImage->extension();
 
          $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
-         
+
          $request->image->move(public_path('img/books'), $imageName);
 
          $book->image = $imageName;
@@ -62,8 +64,9 @@ class BookController extends Controller
       return redirect('/')->with('msg', 'Cliente cadastrado com sucesso');
    }
 
-   public function show($id) {
-      
+   public function show($id)
+   {
+
       $book = Book::findOrFail($id);
 
       $bookOwner = User::where('id', $book->user_id)->first()->toArray();
@@ -71,28 +74,40 @@ class BookController extends Controller
       return view('books.show', ['book' => $book, 'bookOwner' => $bookOwner]);
    }
 
-   public function dashboard() {
-      
+   public function dashboard()
+   {
+      $search = request('search');
+      $datebirth = request('date');
       $user = auth()->user();
-
       $books = $user->books;
 
-      return view('books.dashboard', ['books' => $books]);
+      if ($search) {
 
+         $books = Book::where([
+            ['name', 'like', '%' . $search . '%']
+         ])->get();
+      } else if ($datebirth) {
+         $books = Book::where([
+            ['date', 'like', '%' . $datebirth . '%']
+         ])->get();
+      } else {
+         $books = Book::all();
+      }
+
+      return view('books.dashboard', ['books' => $books, 'search' => $search, $datebirth => 'date']);
    }
 
-   public function destroy($id) {
+   public function destroy($id)
+   {
       Book::findOrFail($id)->delete();
 
       return redirect('/dashboard')->with('msg', 'Cliente excluido com sucesso!');
    }
 
-   public function edit($id){
+   public function edit($id)
+   {
 
       $book = Book::findOrFail($id);
-      return view('books.edit',['book' => $book]); 
+      return view('books.edit', ['book' => $book]);
    }
-
-   
-
 }

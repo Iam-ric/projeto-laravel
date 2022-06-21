@@ -34,9 +34,9 @@
         </div>
         @endforeach
         @if(count($books) == 0 && $search)
-        <p>Não foi possivel encontrar o livro com {{ $search }}! <a href="/">Ver todos</a></p>
+        <p>nome ou idade não encontrados {{ $search }}! <a href="/">Ver todos</a></p>
         @elseif(count($books) == 0)
-        <p>Não há livros disponiveis no momento</p>
+        <p>Não há Clientes cadastrados</p>
         @endif
     </div>
 </div>
