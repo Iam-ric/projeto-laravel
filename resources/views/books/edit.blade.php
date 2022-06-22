@@ -1,12 +1,12 @@
 @extends('layouts.main')
 
-@section('title', 'edita Cadastro')
+@section('title', 'Editar Cadastro')
 
 @section('content')
 
 <div id="book-create-container" class="col-md-6 offset-md-3">
-  <h1>Adicione um Cliente</h1>
-  <form action="/books/edita/{{ $book->id}}" method="POST" enctype="multipart/form-data">
+  <h1>Editando: {{ $book->name }}</h1>
+  <form action="/books/edit/{{ $book->id }}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
     <div class="form-group">

@@ -14,6 +14,7 @@ header{
 
 .row{
     margin: 0;
+    
 }
 
 .msg {
@@ -62,7 +63,8 @@ header{
 }
 
 .nav-img {
-    width: 70px;
+    width: 100px;
+   
 }
 
 .navbar-nav {
@@ -132,6 +134,7 @@ header{
 #books-container img{
     
     max-width: 100%;
+     max-height: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -177,6 +180,7 @@ header{
 
 #info-container img {
      border-radius: 10px;
+    
 }
 
 #info-container h1 {

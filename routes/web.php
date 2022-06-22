@@ -20,6 +20,6 @@ Route::get('/books/create', [BookController::class,'create'])->middleware('auth'
 Route::get('/books/{id}', [BookController::class,'show']);
 Route::post('/books', [BookController::class, 'store']);
 Route::delete('/books/{id}', [BookController::class, 'destroy'])->middleware('auth');
-
+Route::get('/books/edit/{id}', [BookController::class,'edit'])->middleware('auth');
 Route::get('/dashboard', [BookController::class, 'dashboard'])->middleware('auth');
 
