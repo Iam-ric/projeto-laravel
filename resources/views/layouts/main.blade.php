@@ -19,6 +19,19 @@
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/scripts.js"></script>
 
+  <script>
+    function deleteAlert() {
+
+    if (confirm('deseja excluir esse cliente?')) {
+      return true;
+      //retorna sim ao form
+    } else {
+      return false;
+      //retorna não ao form
+    }
+  }
+  </script>
+
 </head>
 
 <body>
@@ -42,10 +55,10 @@
           </li>
 
           <li class="nav-item">
-            
+
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
-              @csrf 
-                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+              @csrf
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
             </form>
           </li>
           @endauth
@@ -71,7 +84,7 @@
       </div>
     </div>
   </main>
-  
+
   <footer>
     <p>Iam Henrique &copy; 2022</p>
   </footer>

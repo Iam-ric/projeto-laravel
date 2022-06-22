@@ -19,7 +19,7 @@ Route::get('/', [BookController::class,'index']);
 Route::get('/books/create', [BookController::class,'create'])->middleware('auth');
 Route::get('/books/{id}', [BookController::class,'show']);
 Route::post('/books', [BookController::class, 'store']);
-Route::delete('/books/{id}', [BookController::class, 'destroy'])->middleware('auth');
+Route::delete('/books/{id}', [BookController::class, 'destroy'])->middleware('auth')-> name ( 'books.delete' ); 
 Route::get('/books/edit/{id}', [BookController::class,'edit'])->middleware('auth');
 Route::get('/dashboard', [BookController::class, 'dashboard'])->middleware('auth');
 

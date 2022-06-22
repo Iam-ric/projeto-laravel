@@ -49,13 +49,16 @@
                             <ion-icon name="create-outline"></ion-icon>Editar
                         </a>
 
-                        <form action="/books/{{ $book->id }}" method="POST">
+
+                        <form action="/books/{{ $book->id }}" method="POST" onsubmit="return deleteAlert();" >
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger delete-btn">
-                                <ion-icon name="trash-outline"></ion-icon>Deletar
+                            <ion-icon name="trash-outline">
+                            </ion-icon>Delete</a>
                             </button>
                         </form>
+
                     </td>
 
                 </tr>
